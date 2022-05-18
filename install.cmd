@@ -17,9 +17,9 @@ VBoxManage storagectl kali --name "SATA Controller" --add sata --controller Inte
 ::attach OSBoxes kali VDI
 VBoxManage storageattach kali --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "C:\Users\Ilja\Desktop\Opdracht_NPE\kali.vdi"
 ::attach first NIC (NAT)
-VBoxManage modifyvm kali --nic1 nat --nictype1 82540EM
+VBoxManage modifyvm kali --nic1 nat
 ::attach second NIC (hostonly)
-VBoxManage modifyvm kali --nic2 hostonly
+VBoxManage modifyvm kali --nic2 intnet
 ::start VM
 vboxmanage startvm kali
 
@@ -41,6 +41,6 @@ VBoxManage storagectl metasploitable --name "SATA Controller" --add sata --contr
 ::attach OSBoxes kali VDI
 VBoxManage storageattach metasploitable --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "C:\Users\Ilja\Desktop\Opdracht_NPE\Metasploitable2-Linux\Metasploitable.vmdk"
 ::attach NIC (hostonly)
-VBoxManage modifyvm metasploitable --nic1 hostonly
+VBoxManage modifyvm metasploitable --nic1 intnet
 ::start VM
 vboxmanage startvm metasploitable
