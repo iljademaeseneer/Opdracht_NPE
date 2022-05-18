@@ -38,7 +38,7 @@ VBoxManage modifyvm metasploitable --graphicscontroller vmsvga
 VBoxManage modifyvm metasploitable --cpus 1
 ::create storage controller
 VBoxManage storagectl metasploitable --name "SATA Controller" --add sata --controller IntelAHCI
-::attach OSBoxes kali VDI
+::attach OSBoxes VMDK
 VBoxManage storageattach metasploitable --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "C:\Users\Ilja\Desktop\Opdracht_NPE\Metasploitable2-Linux\Metasploitable.vmdk"
 ::attach NIC (internal)
 VBoxManage modifyvm metasploitable --nic1 intnet
